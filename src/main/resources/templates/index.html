@@ -4,6 +4,59 @@
     <meta charset="UTF-8">
     <title>CRUD Rows</title>
 </head>
+<style>
+    body {
+        background-color: #22262a;
+        color: #ffffff;
+        font-family: sans-serif;
+        font-size: 16px;
+    }
+    form {
+        background-color: #151517;
+        display: flex;
+        border-radius: 10px;
+        padding: 20px;
+        width: auto;
+        margin-bottom: 15px;
+        align-items: center;
+    }
+    p > label {
+        display: block;
+        width: min-content;
+        font-size: 11px;
+        margin-left: 5px;
+    }
+    label > input {
+        display: block;
+        width: 110px;
+        background-color: #b7b7b7;
+        border: none;
+    }
+    input:hover {
+        background-color: #ffffff;
+    }
+    p {
+        text-align: center;
+        margin: 0;
+    }
+    button {
+        background-color: #e1e1e1;
+        border-radius: 5px;
+        border-style: none;
+        height: min-content;
+    }
+    button {
+        margin-left: auto;
+    }
+    button:hover {
+        background-color: #ffffff;
+    }
+    .delete {
+        width: min-content;
+        padding: 0;
+        color: transparent;
+    }
+</style>
 <body>
 <h1>CRUD Rows</h1>
 
@@ -68,7 +121,7 @@
     </p>
     <p>
         <label>Website:
-            <input type="number" name="website" required>
+            <input type="text" name="website" required>
         </label>
     </p>
     <p>
@@ -77,7 +130,7 @@
         </label>
     </p>
     <p>
-        <label>Tamano instalador:
+        <label>Tamaño instalador:
             <input type="number" name="installerSize" required>
         </label>
     </p>
@@ -168,7 +221,7 @@
         <button type="submit">Actualizar</button>
     </form>
 
-    <form method="post" action="/remove">
+    <form method="post" action="/remove" class="delete">
         <input type="hidden" name="key" th:value="${entry.key}">
         <button type="submit">Eliminar</button>
     </form>
